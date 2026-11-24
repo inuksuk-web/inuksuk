@@ -1,0 +1,25 @@
+<section class="mod-inicio__portada">
+  {% if p.portada %}
+  <img class="mod-inicio__imagen" src="{{ p.portada }}" alt="{{ p.portada_alt }}" loading="eager">
+  {% endif %}
+  <div class="mod-inicio__cabecera">
+    <h1 class="mod-inicio__titulo">{{ p.titulo }}</h1>
+    {% if p.subtitulo %}
+    <p class="mod-inicio__subtitulo">{{ p.subtitulo }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% if p.texto %}
+<section class="mod-inicio__texto">
+  {% for parrafo in p.texto | parrafos %}
+  <p>{{ parrafo }}</p>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if p.boton_texto and p.boton_enlace %}
+<p class="mod-inicio__accion">
+  <a class="mod-inicio__boton" href="{{ p.boton_enlace if '://' in p.boton_enlace else raiz ~ p.boton_enlace }}">{{ p.boton_texto }}</a>
+</p>
+{% endif %}
