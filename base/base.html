@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ sitio.idioma | default('es') }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if es_portada %}{{ sitio.nombre }}{% else %}{{ titulo_pagina }} · {{ sitio.nombre }}{% endif %}</title>
+  {% if sitio.descripcion is defined %}
+  <meta name="description" content="{{ sitio.descripcion }}">
+  {% endif %}
+  <link rel="stylesheet" href="{{ raiz }}estilos.css">
+</head>
+<body class="mod-{{ modulo }}">
+  <header class="cabecera">
+    <a class="cabecera__marca" href="{{ raiz or './' }}">{{ sitio.nombre }}</a>
+    {% if menu | length > 1 %}
+    <nav class="menu" aria-label="Principal">
+      <ul>
+        {% for item in menu %}
+        <li><a href="{{ (raiz ~ item.ruta ~ '/') if item.ruta else (raiz or './') }}"{% if item.ruta == actual %} aria-current="page"{% endif %}>{{ item.titulo }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
+  </header>
+
+  <main id="contenido">
+{{ contenido | safe }}
+  </main>
+
+  <footer class="pie">
+    <p>{{ sitio.pie | default('© ' ~ sitio.nombre) }}</p>
+  </footer>
+</body>
+</html>
