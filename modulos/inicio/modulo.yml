@@ -1,0 +1,28 @@
+nombre: inicio
+descripcion: Portada con título, imagen opcional, texto de presentación y un botón.
+menu: Inicio
+
+parametros:
+  titulo:
+    tipo: texto
+    obligatorio: true
+    descripcion: Título principal de la portada.
+  subtitulo:
+    tipo: texto
+    descripcion: Frase bajo el título.
+  portada:
+    tipo: medio
+    descripcion: Imagen de portada (drive:ID, URL o ruta relativa).
+  portada_alt:
+    tipo: texto
+    defecto: ""
+    descripcion: Texto alternativo de la imagen de portada.
+  texto:
+    tipo: texto
+    descripcion: Texto de presentación. Una línea en blanco separa párrafos.
+  boton_texto:
+    tipo: texto
+    descripcion: Texto del botón de llamada a la acción.
+  boton_enlace:
+    tipo: texto
+    descripcion: Destino del botón (URL o ruta de otro módulo, p. ej. galeria/).
