@@ -1,0 +1,14 @@
+# Configuración de ejemplo de una web Inuksuk.
+# Cada línea de 'modulos' es una página; el orden es el del menú.
+# El primer módulo es la portada (index.html).
+
+sitio:
+  nombre: Figuralba
+  idioma: es
+  descripcion: Figuras, miniaturas y modelismo.
+  pie: "© 2026 Figuralba"
+  tema: {color_primario: "#7a3db8", color_suave: "#f1ecf7"}
+
+modulos:
+  - inicio: {titulo: "Bienvenidos a Figuralba", subtitulo: "Figuras pintadas a mano", texto: "Este es un texto de prueba de la portada.\n\nUna línea en blanco separa los párrafos.", boton_texto: "Quiénes somos", boton_enlace: "nosotros/"}
+  - inicio: {titulo: "Quiénes somos", menu: "Nosotros", ruta: "nosotros", texto: "Mientras no exista un módulo de texto propio, el módulo inicio sirve también para páginas sencillas."}
