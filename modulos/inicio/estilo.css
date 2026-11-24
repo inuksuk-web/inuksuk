@@ -1,0 +1,52 @@
+/* Módulo inicio: todas las reglas bajo .mod-inicio */
+
+.mod-inicio__portada {
+  display: grid;
+  gap: calc(var(--espacio) * 1.5);
+  text-align: center;
+  margin-bottom: calc(var(--espacio) * 2);
+}
+
+.mod-inicio__imagen {
+  width: 100%;
+  max-height: 28rem;
+  object-fit: cover;
+  border-radius: var(--radio);
+}
+
+.mod-inicio__titulo {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+}
+
+.mod-inicio__subtitulo {
+  margin: 0.5rem 0 0;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.mod-inicio__texto {
+  max-width: 42rem;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+.mod-inicio__accion {
+  text-align: center;
+  margin-top: calc(var(--espacio) * 2);
+}
+
+.mod-inicio__boton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radio);
+  background: var(--color-primario);
+  color: var(--color-fondo);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mod-inicio__boton:hover {
+  filter: brightness(1.1);
+}
